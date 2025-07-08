@@ -155,10 +155,16 @@
         }
         draw("CCA981", 432, 8989, "A320", "L", "KEWR", "KBOS", 69, 420, "TAKE OF NEWARK FLY TO BOSTON AND LAND", "", "NEW TO VATSIM AND THE A320 I WILL TRY MY BEST");
 
+        function _showDocument(_base64Url){
+            var win = window.open();
+            win.document.write("<img src=\"" + _base64Url + "\"></img><br />Right click and save image as to download.");
+        }
+
         document.getElementById("download").addEventListener('click', () => {
             const canvas = document.getElementById('bkg');
             const img    = canvas.toDataURL('image/png');
-            document.location.href = img;
+            
+            _showDocument(img);
         })
 
         document.getElementById("submit").addEventListener('click', () => {
